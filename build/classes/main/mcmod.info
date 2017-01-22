@@ -1,13 +1,12 @@
 [
     {
         "modid": "igneouspack",
-        "name": "IgneousPack. Module 1 of GeoWorld",
+        "name": "IgneousPack",
         "version": "1.0.1a",
         "description": "A Geologic Minecraft Mod",
         "url": "http://www.kevinmendoza.net/geoworld-a-minecraft-geology-addon/",
         "authorList": [
-            "El_Minadero",
-            "FLARD"
+            "El_Minadero"
         ],
         "requiredMods": [
             "geoworld",
