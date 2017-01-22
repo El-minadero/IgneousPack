@@ -60,6 +60,7 @@
 # OS generated files #
 
 ######################
+.Class
 
 .DS_Store
 

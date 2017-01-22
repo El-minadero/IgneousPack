@@ -23,12 +23,12 @@ id=IgneousPackMain.ID,
 name=IgneousPackMain.NAME,
 version=IgneousPackMain.VERSION,
 url="http://www.kevinmendoza.net/geoworld-a-minecraft-geology-addon/",
-authors = {"El_Minadero", "FLARD"},
+authors = {"El_Minadero"},
 description = "A Geologic Minecraft Mod",
 dependencies = @Dependency(id = "geoworld", optional = false))
 public class IgneousPackMain extends Module {
 	public static final String ID = "igneouspack";
-	public static final String NAME = "IgneousPack. Module 1 of GeoWorld";
+	public static final String NAME = "IgneousPack";
 	public static final String VERSION = "1.0.1a";
 	private GeologicContainer batholiths;
 	private GeologicContainer volcanics;
