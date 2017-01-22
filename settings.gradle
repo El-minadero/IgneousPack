@@ -1,0 +1,3 @@
+rootProject.name = 'IgneousPack'
+include ':GeoWorld'
+project(':GeoWorld').projectDir = new File(settingsDir,'../GeoWorld')

@@ -1,0 +1,13 @@
+[{
+    "modid": "igneouspack",
+    "name": "Igneous Pack",
+    "version": "1.0",
+    "description": "Adds Intrusive and Extrusive igneous provinces to minecraft",
+    "authorList": [
+        "El_Minadero",
+        
+    ],
+    "dependencies": [
+        "geoworld"
+    ]
+}]
