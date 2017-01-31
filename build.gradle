@@ -8,6 +8,17 @@ description = 'Igneous Pack'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+sourceSets {
+    main {
+        java {
+            srcDir 'net/kevinmendoza/igneouspack'
+            exclude 'geology/**'
+            exclude 'tests/**'
+            include 'main/**'
+            include 'configuration/**'
+       }
+   }
+}
 repositories {
     mavenCentral()
     maven {

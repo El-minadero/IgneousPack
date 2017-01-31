@@ -8,26 +8,31 @@ import net.kevinmendoza.geoworld.geology.GeologicContainer;
 import net.kevinmendoza.geoworld.geology.StratigraphicColumn;
 import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
 import net.kevinmendoza.geoworld.geology.regionmap.GeologicRegionMap;
+import net.kevinmendoza.geoworld.geology.regionmap.GeologicRegionMapBuilderGetInterface;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.IntrusiveRegionFactory;
-import net.kevinmendoza.igneouspack.main.IntrusiveFactory.IgneousMapBuilder;
+import net.kevinmendoza.igneouspack.geology.intrusivefactories.SubRegionFactory;
 
 public class IntrusiveMap extends GeologicRegionMap implements GeologicContainer {
 	
-	private final IntrusiveRegionFactory factory;
-	
-	public IntrusiveMap(IgneousMapBuilder builder) {
+	public IntrusiveMap(GeologicRegionMapBuilderGetInterface builder) {
 		super(builder);
-		this.factory = builder.getFactory();
+		// TODO Auto-generated constructor stub
 	}
-	public void setFactorySeed(long seed) { factory.setSeed(seed); }
+
 	protected GeologicObjectInterface buildRegion(Vector2i fullCenter) 
-	{ return factory.makeRegionPrototype(fullCenter); }
+	{ return IntrusiveRegionFactory.MakeRegionPrototype(fullCenter); }
 	
 	@Override
 	protected StratigraphicColumn buildStratigraphicColumn(
 			List<GeologicObjectInterface> relevantRegions) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void setFactorySeed(long seed) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

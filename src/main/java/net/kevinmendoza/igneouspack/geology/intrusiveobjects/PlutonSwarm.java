@@ -6,14 +6,14 @@ import com.flowpowered.math.vector.Vector3i;
 import net.kevinmendoza.geoworld.geology.geochemistry.ChemicalConditions;
 import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
 import net.kevinmendoza.geoworld.geology.region.GeologicRegion;
-import net.kevinmendoza.igneouspack.geology.intrusivefactories.IntrusiveRegionFactory;
+import net.kevinmendoza.geoworld.geology.region.GeologicRegionBuilderGetInterface;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.SubRegionFactory;
-import net.kevinmendoza.igneouspack.geology.intrusivefactories.BuilderClassContainer.BatholithBuilder;;
 
-public class Batholith extends GeologicRegion implements GeologicObjectInterface {
+public class PlutonSwarm extends GeologicRegion implements GeologicObjectInterface {
 
-	public Batholith(BatholithBuilder builder) {
+	public PlutonSwarm(GeologicRegionBuilderGetInterface builder) {
 		super(builder);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class Batholith extends GeologicRegion implements GeologicObjectInterface
 	@Override
 	protected GeologicObjectInterface makeSubRegion(String region,
 			Vector2i center) {
-		if(region.equalsIgnoreCase("Pluton-Swarm"))
+		if(region.equalsIgnoreCase("Pluton"))
 			return SubRegionFactory.MakePlutonSwarm(center);
 		return null;
 	}
