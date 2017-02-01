@@ -14,8 +14,7 @@ sourceSets {
             srcDir 'net/kevinmendoza/igneouspack'
             exclude 'geology/**'
             exclude 'tests/**'
-            include 'main/**'
-            include 'configuration/**'
+            exclude 'geology/intrusivefactories/**'
        }
    }
 }

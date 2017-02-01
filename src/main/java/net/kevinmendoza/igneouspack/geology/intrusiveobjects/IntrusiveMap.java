@@ -10,8 +10,7 @@ import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
 import net.kevinmendoza.geoworld.geology.regionmap.GeologicRegionMap;
 import net.kevinmendoza.geoworld.geology.regionmap.GeologicRegionMapBuilderGetInterface;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.IntrusiveRegionFactory;
-import net.kevinmendoza.igneouspack.geology.intrusivefactories.SubRegionFactory;
-
+/*
 public class IntrusiveMap extends GeologicRegionMap implements GeologicContainer {
 	
 	public IntrusiveMap(GeologicRegionMapBuilderGetInterface builder) {
@@ -35,6 +34,6 @@ public class IntrusiveMap extends GeologicRegionMap implements GeologicContainer
 		
 	}
 
+*/
 
 
-}

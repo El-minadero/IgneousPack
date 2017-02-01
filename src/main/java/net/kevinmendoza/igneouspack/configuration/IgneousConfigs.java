@@ -1,7 +1,13 @@
 package net.kevinmendoza.igneouspack.configuration;
 
+import com.flowpowered.math.vector.Vector2i;
+
+import net.kevinmendoza.geoworld.geology.LithogenicOrder;
+import net.kevinmendoza.geoworld.proceduralgeneration.shapes.Region;
+import net.kevinmendoza.geoworld.proceduralgeneration.simplex.NoiseMap;
 import net.kevinmendoza.igneouspack.configuration.Config.ExtentConfig;
 import net.kevinmendoza.igneouspack.configuration.Config.RegionConfig;
+import net.kevinmendoza.igneouspack.configuration.Config.NoiseGenerator;
 import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 
@@ -19,6 +25,12 @@ class IgneousConfigs {
 		private RegionConfig regionConfig = new RegionConfig("RECTANGLE",500,300);
 		@Setting(value="pluton-swarm-number",comment="number of possible pluton swarms")
 		private ExtentConfig swarmNumber = new ExtentConfig(10);
+		
+		public int getSpacing() { return spacing; }
+		public double getFreq() { return frequency; }
+		public LithogenicOrder getOrder() { return LithogenicOrder.valueOf(order); }
+		public Region getRegion(Vector2i vec) { return regionConfig.getRegion(vec); }
+		public int getSwarmNumber(long seed) { return (int) swarmNumber.getValue(seed); }
 
 	}
 	
@@ -31,6 +43,10 @@ class IgneousConfigs {
 		@Setting(value="pluton-number",comment="number of possible plutons")
 		private ExtentConfig number = new ExtentConfig(10);
 
+		public LithogenicOrder getOrder() { return LithogenicOrder.valueOf(order); }
+		public Region getRegion(Vector2i vec) { return regionConfig.getRegion(vec); }
+		public int getPlutonNumber(long seed) { return (int) number.getValue(seed); }
+
 	}
 	
 	@ConfigSerializable
@@ -39,10 +55,11 @@ class IgneousConfigs {
 		private String order = "SECOND";
 		@Setting(value="region-parameters",comment="swarm boundaries")
 		private RegionConfig regionConfig = new RegionConfig("RECTANGLE",200,150);
-		@Setting(value="base-frequency")
-		private int number = 500;
-		@Setting(value="octaves")
-		private int octaves = 5;
+		@Setting(value="noise-generator")
+		private NoiseGenerator generator = new NoiseGenerator(5,500);
 
+		public LithogenicOrder getOrder() { return LithogenicOrder.valueOf(order); }
+		public Region getRegion(Vector2i vec) { return regionConfig.getRegion(vec); }
+		public NoiseMap getNoiseGenerator(Vector2i vec) { return generator.getNoiseMap(vec); }
 	}
 }

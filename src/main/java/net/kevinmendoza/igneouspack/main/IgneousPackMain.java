@@ -41,8 +41,10 @@ public class IgneousPackMain  implements GeoWorldPluginInterface {
 	private IgneousPackDefaults defaults;
 	private GeologicContainer batholiths;
 	private GeologicContainer volcanics;
-	@Inject Logger logger; 
-	@Inject PluginContainer container;
+	@Inject
+	private static Logger logger; 
+	@Inject 
+	private static PluginContainer container;
 	
 	@DefaultConfig(sharedRoot = true) File file; 
 	@DefaultConfig(sharedRoot = true)ConfigurationLoader<CommentedConfigurationNode> loader;
@@ -69,20 +71,16 @@ public class IgneousPackMain  implements GeoWorldPluginInterface {
 	public void createConfigs() throws IOException, ObjectMappingException {
 		ConfigurationNode node = loader.createEmptyNode();
 		node.setValue(TypeToken.of(IgneousPackDefaults.class), defaults == null ? (defaults= new IgneousPackDefaults()) : defaults);
-		node.setValue(TypeToken.of(IgneousPackDefaults.class),defaults);
 		loader.save(node);
 
 	}
 
 	@Override
 	public GeoWorldPluginInterface GetInstance() {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
-	@Override
-	public Debug getDebugger() {
-		// TODO Auto-generated method stub
-		return null;
+	public static Debug GetDebugger() {
+		return new Debug(logger);
 	}
 }

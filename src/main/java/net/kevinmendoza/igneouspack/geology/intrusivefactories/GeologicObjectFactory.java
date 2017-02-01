@@ -19,11 +19,9 @@ import net.kevinmendoza.igneouspack.geology.intrusiveobjects.Pluton;
 public class GeologicObjectFactory {
 	
 	private long SEED;
-	private final IgneousConfigs bath;
-
+/*
 	public GeologicObjectFactory() {
 		SEED = 1;
-		bath=null;
 	}
 
 	public void setSeed(long seed) { this.SEED=seed; }
@@ -52,6 +50,6 @@ public class GeologicObjectFactory {
 		public Pluton build() {
 			return new Pluton(this);
 		}
-	}
+	}*/
 	
 }
