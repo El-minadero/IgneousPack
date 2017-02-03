@@ -2,12 +2,12 @@ package net.kevinmendoza.igneouspack.configuration;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.proceduralgeneration.probability.DistributionFactory;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.Region;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.RegionFactory;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.RegionTypes;
-import net.kevinmendoza.geoworld.proceduralgeneration.simplex.NoiseMap;
-import net.kevinmendoza.geoworld.proceduralgeneration.simplex.NoiseMapFactory;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.probability.DistributionFactory;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.RegionFactory;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.RegionTypes;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.simplex.NoiseMap;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.simplex.NoiseMapFactory;
 import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 

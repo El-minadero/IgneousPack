@@ -2,7 +2,7 @@ package net.kevinmendoza.igneouspack.tests;
 
 import org.slf4j.Logger;
 
-import net.kevinmendoza.geoworld.config.Debug;
+import net.kevinmendoza.geoworldlibrary.utilities.Debug;
 
 public class DebuggerOverride extends Debug {
 

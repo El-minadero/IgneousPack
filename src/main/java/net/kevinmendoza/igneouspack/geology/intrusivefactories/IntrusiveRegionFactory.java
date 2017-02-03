@@ -2,8 +2,8 @@ package net.kevinmendoza.igneouspack.geology.intrusivefactories;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.RegionFactory;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectInterface;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.RegionFactory;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.BuilderClassContainer.BatholithBuilder;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.BuilderClassContainer.PrototypeBuilder;
 

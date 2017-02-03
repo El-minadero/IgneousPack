@@ -6,12 +6,12 @@ import java.util.List;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.geology.LithogenicOrder;
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectBuilderGetInterface;
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
-import net.kevinmendoza.geoworld.geology.region.GeologicRegionBuilderGetInterface;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.Region;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.RegionFactory;
+import net.kevinmendoza.geoworldlibrary.geology.LithogenicOrder;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectBuilderGetInterface;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectInterface;
+import net.kevinmendoza.geoworldlibrary.geology.region.GeologicRegionBuilderGetInterface;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.RegionFactory;
 import net.kevinmendoza.igneouspack.geology.intrusiveobjects.Batholith;
 import net.kevinmendoza.igneouspack.geology.intrusiveobjects.IntrusiveRegionPrototype;
 import net.kevinmendoza.igneouspack.geology.intrusiveobjects.Pluton;

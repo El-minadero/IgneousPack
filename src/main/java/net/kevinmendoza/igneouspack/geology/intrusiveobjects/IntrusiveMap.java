@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.geology.GeologicContainer;
-import net.kevinmendoza.geoworld.geology.StratigraphicColumn;
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
-import net.kevinmendoza.geoworld.geology.regionmap.GeologicRegionMap;
-import net.kevinmendoza.geoworld.geology.regionmap.GeologicRegionMapBuilderGetInterface;
+import net.kevinmendoza.geoworldlibrary.geology.GeologicContainer;
+import net.kevinmendoza.geoworldlibrary.geology.StratigraphicColumn;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectInterface;
+import net.kevinmendoza.geoworldlibrary.geology.regionmap.GeologicRegionMap;
+import net.kevinmendoza.geoworldlibrary.geology.regionmap.GeologicRegionMapBuilderGetInterface;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.IntrusiveRegionFactory;
 /*
 public class IntrusiveMap extends GeologicRegionMap implements GeologicContainer {

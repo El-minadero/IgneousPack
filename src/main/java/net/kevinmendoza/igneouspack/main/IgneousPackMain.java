@@ -14,12 +14,11 @@ import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.plugin.PluginContainer;
 
-import com.google.common.reflect.TypeToken;
 import com.google.inject.Inject;
 
-import net.kevinmendoza.geoworld.config.Debug;
-import net.kevinmendoza.geoworld.config.GeoWorldPluginInterface;
-import net.kevinmendoza.geoworld.geology.GeologicContainer;
+import net.kevinmendoza.geoworldlibrary.utilities.Debug;
+import net.kevinmendoza.geoworldlibrary.utilities.GeoWorldPluginInterface;
+import net.kevinmendoza.geoworldlibrary.geology.GeologicContainer;
 import net.kevinmendoza.igneouspack.configuration.IgneousPackDefaults;
 import ninja.leaping.configurate.ConfigurationNode;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
@@ -69,8 +68,9 @@ public class IgneousPackMain  implements GeoWorldPluginInterface {
 	}
 
 	public void createConfigs() throws IOException, ObjectMappingException {
+		logger.info("on game preinit");
 		ConfigurationNode node = loader.createEmptyNode();
-		node.setValue(TypeToken.of(IgneousPackDefaults.class), defaults == null ? (defaults= new IgneousPackDefaults()) : defaults);
+		node.setValue(IgneousPackDefaults.type, defaults == null ? (defaults= new IgneousPackDefaults()) : defaults);
 		loader.save(node);
 
 	}

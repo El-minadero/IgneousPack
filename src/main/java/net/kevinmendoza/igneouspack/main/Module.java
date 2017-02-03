@@ -8,8 +8,8 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.spongepowered.api.plugin.PluginContainer;
-import net.kevinmendoza.geoworld.config.Debug;
-import net.kevinmendoza.geoworld.config.GeoWorldPluginInterface;
+import net.kevinmendoza.geoworldlibrary.utilities.Debug;
+import net.kevinmendoza.geoworldlibrary.utilities.GeoWorldPluginInterface;
 import ninja.leaping.configurate.ConfigurationNode;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.loader.ConfigurationLoader;

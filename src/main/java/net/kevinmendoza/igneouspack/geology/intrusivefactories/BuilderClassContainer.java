@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import net.kevinmendoza.geoworld.geology.LithogenicOrder;
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectBuilderGetInterface;
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
-import net.kevinmendoza.geoworld.geology.region.GeologicRegionBuilderGetInterface;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.Region;
+import net.kevinmendoza.geoworldlibrary.geology.LithogenicOrder;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectBuilderGetInterface;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectInterface;
+import net.kevinmendoza.geoworldlibrary.geology.region.GeologicRegionBuilderGetInterface;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;
 import net.kevinmendoza.igneouspack.geology.intrusiveobjects.Batholith;
 import net.kevinmendoza.igneouspack.geology.intrusiveobjects.IntrusiveRegionPrototype;
 import net.kevinmendoza.igneouspack.geology.intrusiveobjects.Pluton;

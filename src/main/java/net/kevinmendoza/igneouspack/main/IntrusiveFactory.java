@@ -1,6 +1,6 @@
 package net.kevinmendoza.igneouspack.main;
 
-import net.kevinmendoza.geoworld.geology.GeologicContainer;
+import net.kevinmendoza.geoworldlibrary.geology.GeologicContainer;
 import net.kevinmendoza.igneouspack.main.IgneousFactory.IgneousMapFactory;
 
 public class IntrusiveFactory implements IgneousMapFactory {

@@ -2,9 +2,9 @@ package net.kevinmendoza.igneouspack.configuration;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.geology.LithogenicOrder;
-import net.kevinmendoza.geoworld.proceduralgeneration.shapes.Region;
-import net.kevinmendoza.geoworld.proceduralgeneration.simplex.NoiseMap;
+import net.kevinmendoza.geoworldlibrary.geology.LithogenicOrder;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;
+import net.kevinmendoza.geoworldlibrary.proceduralgeneration.simplex.NoiseMap;
 import net.kevinmendoza.igneouspack.configuration.Config.ExtentConfig;
 import net.kevinmendoza.igneouspack.configuration.Config.RegionConfig;
 import net.kevinmendoza.igneouspack.configuration.Config.NoiseGenerator;

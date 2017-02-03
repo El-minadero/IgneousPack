@@ -3,9 +3,9 @@ package net.kevinmendoza.igneouspack.geology.intrusiveobjects;
 import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3i;
 
-import net.kevinmendoza.geoworld.geology.geochemistry.ChemicalConditions;
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
-import net.kevinmendoza.geoworld.geology.region.GeologicRegion;
+import net.kevinmendoza.geoworldlibrary.geology.geochemistry.ChemicalConditions;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectInterface;
+import net.kevinmendoza.geoworldlibrary.geology.region.GeologicRegion;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.IntrusiveRegionFactory;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.SubRegionFactory;
 import net.kevinmendoza.igneouspack.geology.intrusivefactories.BuilderClassContainer.BatholithBuilder;;

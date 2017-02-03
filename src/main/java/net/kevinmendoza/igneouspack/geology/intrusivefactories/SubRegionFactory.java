@@ -2,7 +2,7 @@ package net.kevinmendoza.igneouspack.geology.intrusivefactories;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.geology.geologicobject.GeologicObjectInterface;
+import net.kevinmendoza.geoworldlibrary.geology.geologicobject.GeologicObjectInterface;
 
 public class SubRegionFactory {
 

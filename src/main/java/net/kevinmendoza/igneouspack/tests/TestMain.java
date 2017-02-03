@@ -2,7 +2,7 @@ package net.kevinmendoza.igneouspack.tests;
 
 import com.flowpowered.math.vector.Vector2i;
 
-import net.kevinmendoza.geoworld.geology.GeologicContainer;
+import net.kevinmendoza.geoworldlibrary.geology.GeologicContainer;
 import net.kevinmendoza.igneouspack.main.IntrusiveFactory;
 
 public class TestMain {

@@ -1,6 +1,6 @@
 package net.kevinmendoza.igneouspack.main;
 
-import net.kevinmendoza.geoworld.geology.GeologicContainer;
+import net.kevinmendoza.geoworldlibrary.geology.GeologicContainer;
 
 public final class IgneousFactory {
 
