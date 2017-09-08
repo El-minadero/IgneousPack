@@ -3,86 +3,49 @@ package net.kevinmendoza.igneouspack.geology.intrusive;
 import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3i;
 
-import net.kevinmendoza.geoworldlibrary.geology.rockparameters.GenerationData;
-import net.kevinmendoza.geoworldlibrary.geology.rockparameters.IGeologyData;
-import net.kevinmendoza.geoworldlibrary.geology.rockparameters.Order;
-import net.kevinmendoza.geoworldlibrary.proceduralgeneration.pointmodification.PointModifierFactory;
-import net.kevinmendoza.geoworldlibrary.proceduralgeneration.simplex.NoiseMap;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.EmptyDataFactory;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.GenerationData;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.AbstractRock;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.ISingularGeologyData;
 import net.kevinmendoza.igneouspack.geology.IgneousPackPrototype;
-import net.kevinmendoza.igneouspack.geology.data.DataFactory;
-import net.kevinmendoza.igneouspack.geology.intrusive.PlutonFactory.PlutonBuilder;
 
 class Pluton extends IgneousPackPrototype {
 
-	private int h;
-	private double ext_decay;
-	private double int_decay;
-	private int emplacementDepth;
-	private NoiseMap map;
+	private final AbstractRock rock;
 
-	Pluton(PlutonBuilder plutonBuilder) {
-		super(plutonBuilder);
-		ext_decay = plutonBuilder.getExternalDecayConstant();
-		int_decay = plutonBuilder.getInternalDecayConstant();
-		emplacementDepth = plutonBuilder.getEmplacementDepth();
-		map = plutonBuilder.getAlterationMap();
+	Pluton(PlutonFactory.Builder builder) {
+		super(builder);
+		rock			= builder.getRock();
 	}
 
-	@Override
-	protected double getPrototypeInternalDecay(Vector2i vec) {
-		Vector3i v = new Vector3i(vec.getX(),emplacementDepth,vec.getY());
-		return getExternalDecay(v);
-	}
-	@Override
-	protected double getPrototypeExternalDecay(Vector2i vec) {
-		Vector3i v = new Vector3i(vec.getX(),emplacementDepth,vec.getY());
-		return getExternalDecay(v);
-	}
-	@Override
-	protected double getPrototypeExternalDecay(Vector3i vec) {
-		double val = 1-getDistanceToEdge(vec)*ext_decay;
-		if(val > 1)
-			return 1*map.getNoise(vec);
-		else if(val < ZERO_THRESHOLD)
-			return 0;
-		else
-			return val*map.getNoise(vec);
-	}
-	@Override
-	protected double getPrototypeInternalDecay(Vector3i vec) {
-		double val = getDistanceToEdge(vec)*int_decay;
-		if(val > 1)
-			return 1*map.getNoise(vec);
-		else if(val < ZERO_THRESHOLD)
-			return 0;
-		else
-			return val*map.getNoise(vec);
-	}
 	
 	@Override
-	public void primeGeneration(GenerationData metaData) {
-		h = metaData.getBaseHeight();
+	public void loadNearbyNodes(GenerationData metaData) {
 	}
 
 	@Override
-	protected IGeologyData getGeologyData(IGeologyData t,
+	public void primeLoadedObjects(GenerationData metaData) {
+		
+	}
+
+	@Override
+	protected ISingularGeologyData getGeologyData(ISingularGeologyData t,
 			Vector2i query) {
-		if(t.getID()==DataFactory.GetSurfaceID()) {
-			return DataFactory.CreateEmptySurfaceInstance(Order.FIRST);
-		}
-		return null;
+		return EmptyDataFactory.getEmptyDataObject(t.getID());
 	}
 
 	@Override
-	protected IGeologyData getGeologyData(IGeologyData t,
+	protected ISingularGeologyData getGeologyData(ISingularGeologyData t,
 			Vector3i query) {
-		int depth = query.getY();
-		if(t.getID()==DataFactory.GetAlterationID()) {
-			return DataFactory.CreateAlterationInstance(getAlteration().getHeatGradient(),
-					getPressure(depth,h), Order.FIRST);
+		ISingularGeologyData data = EmptyDataFactory.getEmptyDataObject(t.getID());
+		if(t.getID()==2) {
+			
 		}
-		return DataFactory.CreateEmptyAlterationInstance(Order.FIRST);
+		else if(t.getID()==3) {
+			data.merge(rock);
+			return  data;
+		}
+		return data;
 	}
-
 	public String getName() { return "Map Object"; }
 }

@@ -1,48 +1,34 @@
 package net.kevinmendoza.igneouspack.geology.intrusive;
 
-import java.util.Random;
 
 import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3i;
 
-import net.kevinmendoza.geoworldlibrary.geology.rockparameters.GenerationData;
-import net.kevinmendoza.geoworldlibrary.geology.rockparameters.IGeologyData;
-import net.kevinmendoza.geoworldlibrary.geology.rockparameters.Order;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.DefaultDataFactory;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.EmptyDataFactory;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.GenerationData;
+import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.ISingularGeologyData;
 import net.kevinmendoza.igneouspack.geology.IgneousPackPrototype;
-import net.kevinmendoza.igneouspack.geology.data.DataFactory;
-import net.kevinmendoza.igneouspack.geology.intrusive.BatholithFactory.BatholithBuilder;
 
 final class Batholith extends IgneousPackPrototype {
 
-	private int h;
 	
-	Batholith(BatholithBuilder batholithBuilder) {
+	Batholith(BatholithFactory.Builder  batholithBuilder) {
 		super(batholithBuilder);
 	}
+	
+	public final void loadNearbyNodes(GenerationData metaData) { }
+	public final void primeLoadedObjects(GenerationData metaData) { }
 
-	@Override
-	public void primeGeneration(GenerationData metaData) {
-		 h = metaData.getBaseHeight();
-	}
-
-	@Override
-	protected IGeologyData getGeologyData(IGeologyData t,
+	protected final ISingularGeologyData getGeologyData(ISingularGeologyData t,
 			Vector2i query) {
-		if(t.getID()==DataFactory.GetSurfaceID()) {
-			return DataFactory.CreateEmptySurfaceInstance(Order.FIRST);
-		}
-		return null;
+		return EmptyDataFactory.getEmptyDataObject(t.getID());
 	}
-
-	@Override
-	protected IGeologyData getGeologyData(IGeologyData t,
+	protected final ISingularGeologyData getGeologyData(ISingularGeologyData t,
 			Vector3i query) {
-		int depth = query.getY();
-		if(t.getID()==DataFactory.GetAlterationID()) {
-			return DataFactory.CreateAlterationInstance(getHeat(depth,h),getPressure(depth,h), Order.FIRST);
-		}
-		return DataFactory.CreateEmptyAlterationInstance(Order.FIRST);
+		return DefaultDataFactory.getEmptyDataObject(t.getID());
 	}
 	
 	public String getName() { return "Batholith"; }
+
 }

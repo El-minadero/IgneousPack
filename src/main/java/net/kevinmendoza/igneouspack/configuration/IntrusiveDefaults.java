@@ -6,26 +6,28 @@ import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 
 @ConfigSerializable
-public class IntrusiveDefaults {
+public class IntrusiveDefaults implements IIntrusiveDefaults {
 	public static final TypeToken<IntrusiveDefaults> type = TypeToken.of(IntrusiveDefaults.class);
 	
 	@Setting
-	IGlobalDefaults globalDefaults;
+	IntrusiveMapDefaults IntrusiveMapDefaults;
 	@Setting
-	IMapDefaults IgneousMapDefaults;
+	IntrusiveStructureDefaults batholithDefaults;
 	@Setting
-	ISwarmDefaults swarmDefaults;
-	@Setting
-	IBatholithDefaults batholithDefaults;
-	@Setting
-	PlutonDefaults plutonDefaults;
+	IntrusiveStructureDefaults plutonDefaults;
 	
 	public IntrusiveDefaults() {
-		globalDefaults 		= new GlobalDefaults();
-		IgneousMapDefaults  = new IntrusiveMapDefaults();
-		batholithDefaults	= new BatholithDefaults();
-		swarmDefaults		= new SwarmDefaults();
-		plutonDefaults		= new PlutonDefaults();
+		IntrusiveMapDefaults  = new IntrusiveMapDefaults();
+		batholithDefaults	= new IntrusiveStructureDefaults(true);
+		plutonDefaults		= new IntrusiveStructureDefaults(false);
+	}
+	
+	public IStructureDefaults getBatholithDefaults() {
+		return batholithDefaults;
+	}
+	
+	public IStructureDefaults getPlutonDefaults() {
+		return plutonDefaults;
 	}
 
 }

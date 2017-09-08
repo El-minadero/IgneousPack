@@ -6,11 +6,9 @@ public class ConfigBind extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bind(IGlobalDefaults.class).to(GlobalDefaults.class);
 		bind(IMapDefaults.class).to(IntrusiveMapDefaults.class);
-		bind(IBatholithDefaults.class).to(BatholithDefaults.class);
-		bind(ISwarmDefaults.class).to(SwarmDefaults.class);
-		bind(IPlutonDefaults.class).to(PlutonDefaults.class);
+		bind(IIntrusiveDefaults.class).to(IntrusiveDefaults.class);
+		bind(IClassificationDefaults.class).to(RockClassificationDefaults.class);
 	}
 
 }
