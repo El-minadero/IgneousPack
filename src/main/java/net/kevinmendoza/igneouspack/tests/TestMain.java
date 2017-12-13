@@ -20,6 +20,7 @@ import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.
 import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IGeology;
 import net.kevinmendoza.igneouspack.configuration.IgneousDefaults;
 import net.kevinmendoza.igneouspack.geology.intrusive.IntrusiveFactoryHub;
+import net.kevinmendoza.igneouspack.main.IgneousPackCommand;
 
 public class TestMain {
 
@@ -38,6 +39,9 @@ public class TestMain {
 				PrimeData data = new PrimeData(query1); 
 				data.setHeight(60);
 				geology.loadNearbyNodes(data);
+				Vector3i q1 = new Vector3i(query1.getX(),50,query1.getY());
+				String m = geology.getLocationData(q1);
+				System.out.println(m);
 				for(int y=1;y>0;y--) {
 					totalIterations++;
 					Vector3i query2 = new Vector3i(query1.getX(),y,query1.getY());

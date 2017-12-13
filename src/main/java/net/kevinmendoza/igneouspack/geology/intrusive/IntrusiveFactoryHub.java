@@ -5,8 +5,8 @@ import java.util.HashMap;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractMapFactory;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototypeFactory;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.factory.AbstractMapFactory;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.factory.AbstractPrototypeFactory;
 import net.kevinmendoza.igneouspack.configuration.ConfigBind;
 import net.kevinmendoza.igneouspack.main.IgneousPackMain;
 

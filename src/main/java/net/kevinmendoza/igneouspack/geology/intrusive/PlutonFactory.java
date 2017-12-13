@@ -7,12 +7,12 @@ import com.flowpowered.math.vector.Vector2i;
 import com.flowpowered.math.vector.Vector3i;
 import com.google.inject.Inject;
 
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototypeFactory;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IGeologyNode;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.NodeBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.factory.AbstractPrototypeFactory;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.node.IGeologyNode;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.node.NodeBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.prototype.AbstractPrototype;
 import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.Order;
 import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.AbstractRock;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototype;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.pointmodification.PointModifierFactory;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.pointmodification.PointModifier;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;

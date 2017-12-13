@@ -11,8 +11,8 @@ import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.
 import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.AbstractRock;
 import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.ISingularGeologyData;
 import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.singleagedata.Surface;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototype;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IPrototypeBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.prototype.AbstractPrototype;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.prototype.IPrototypeBuilder;
 
 public abstract class IgneousPackPrototype extends AbstractPrototype {
 
@@ -24,6 +24,10 @@ public abstract class IgneousPackPrototype extends AbstractPrototype {
 	@Override
 	public final ISingularGeologyData getStartingData(ISingularGeologyData dataType) {
 		return EmptyDataFactory.getEmptyDataObject(dataType.getID());
+	}
+	@Override
+	public String toString() {
+		return getName() + ":" + "\n";
 	}
 
 }

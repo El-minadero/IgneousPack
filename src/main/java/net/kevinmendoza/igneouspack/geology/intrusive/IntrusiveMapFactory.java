@@ -3,12 +3,12 @@ package net.kevinmendoza.igneouspack.geology.intrusive;
 import com.google.inject.Inject;
 
 import net.kevinmendoza.geoworldlibrary.geology.compositerockdata.Order;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractMapFactory;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototypeFactory;
 import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IGeology;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IGeologyMapBuilder;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototype;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IPrototypeBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.factory.AbstractMapFactory;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.factory.AbstractPrototypeFactory;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.node.IGeologyMapBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.prototype.AbstractPrototype;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.prototype.IPrototypeBuilder;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.pointmodification.PointModifier;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.pointmodification.PointModifierFactory;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;

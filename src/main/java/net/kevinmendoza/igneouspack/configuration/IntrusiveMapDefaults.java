@@ -19,8 +19,8 @@ class IntrusiveMapDefaults implements IMapDefaults {
 	private Order order;
 	
 	IntrusiveMapDefaults(){
-		spacing = 2500;
-		subRegionFrequency = .3;
+		spacing = 1200;
+		subRegionFrequency = .2;
 	}
 	
 	public int getSpacing() { return spacing; }

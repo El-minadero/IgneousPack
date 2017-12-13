@@ -2,9 +2,16 @@
 <projectDescription>
 	<name>IgneousPack</name>
 	<comment></comment>
-		<buildSpec>
+	<projects>
+	</projects>
+	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -20,11 +27,6 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.acceleo.ide.ui.acceleoBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>

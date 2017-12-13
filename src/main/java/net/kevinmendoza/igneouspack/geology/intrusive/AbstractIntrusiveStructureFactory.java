@@ -5,10 +5,10 @@ import java.util.HashMap;
 import com.flowpowered.math.vector.Vector2i;
 import com.google.inject.Inject;
 
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototype;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.AbstractPrototypeFactory;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.IGeologyNode;
-import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.NodeBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.factory.AbstractPrototypeFactory;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.node.IGeologyNode;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.node.NodeBuilder;
+import net.kevinmendoza.geoworldlibrary.geology.recursivegeology.prototype.AbstractPrototype;
 import net.kevinmendoza.geoworldlibrary.proceduralgeneration.shapes.Region;
 import net.kevinmendoza.igneouspack.configuration.IIntrusiveDefaults;
 import net.kevinmendoza.igneouspack.configuration.IStructureDefaults;

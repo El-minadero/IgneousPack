@@ -3,9 +3,12 @@ package net.kevinmendoza.igneouspack.main;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
+import org.spongepowered.api.Sponge;
+import org.spongepowered.api.command.spec.CommandSpec;
 import org.spongepowered.api.config.DefaultConfig;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.GameReloadEvent;
@@ -13,6 +16,7 @@ import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
 import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.plugin.PluginContainer;
+import org.spongepowered.api.text.Text;
 
 import com.google.common.reflect.TypeToken;
 import com.google.inject.Guice;
@@ -44,6 +48,7 @@ public class IgneousPackMain implements GeoWorldPlugin  {
 	public static final String VERSION = "1.0.1a";
 	public static IgneousPackMain PluginMain;
 	private static final boolean DEBUG = true;
+	private HashMap<Long,IGeology> geologyMaps;
 	private IntrusiveDefaults defaults;
 	@Inject
 	private Logger logger; 
@@ -57,10 +62,18 @@ public class IgneousPackMain implements GeoWorldPlugin  {
 	
 	public IgneousPackMain() {
 		PluginMain = this;
+		geologyMaps = new HashMap<>();
 	}
 	@Listener
 	public void onGamePreInitialization(GamePreInitializationEvent event) throws IOException, ObjectMappingException {
 	 createConfigs();
+	 CommandSpec myCommandSpec = CommandSpec.builder()
+			    .description(Text.of("Show Local Data Command"))
+			    .permission("igneouspack.command.revealsurroundingstructures")
+			    .executor(new IgneousPackCommand())
+			    .build();
+
+			Sponge.getCommandManager().register(PluginMain, myCommandSpec, "localstructuredata");
 	}
 	
 	@Listener
@@ -68,10 +81,12 @@ public class IgneousPackMain implements GeoWorldPlugin  {
 		createConfigs();
 	}
 	public IGeology getGeology(long seed) {
-		if(DEBUG){
+		if(!geologyMaps.containsKey(seed)) {
+			IntrusiveFactoryHub.setSeed(seed);
+			IGeology geology = IntrusiveFactoryHub.GetMapFactory(seed).createGeologyMap();
+			geologyMaps.put(seed, geology);
 		}
-		IntrusiveFactoryHub.setSeed(seed);
-		return IntrusiveFactoryHub.GetMapFactory(seed).createGeologyMap();
+		return geologyMaps.get(seed);
 	}
 
 	public void createConfigs() throws IOException, ObjectMappingException {
